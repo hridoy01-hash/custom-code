@@ -51,6 +51,7 @@ window.onload = (event) => {
                     Custom_checkbox_main_wrapper.appendChild(checkbox_wrapper);
                     let checkBox_id = elementMaker("input", ["checkBox_id"], "checkBoxClick_id");
                     checkBox_id.setAttribute("type", "checkbox");
+                    checkBox_id.setAttribute("checked", true);
                     checkbox_wrapper.appendChild(checkBox_id);
 
                     const text_wrapper = elementMaker("div", ["text_wrapper"]);
