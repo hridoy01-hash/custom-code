@@ -1,6 +1,7 @@
 
 window.onload = (event) => {
     setTimeout(function () {
+
         const s0000_footer_row_three_col_two = document.querySelector(".s0000_footer_row_three_col_two");
         const payWithBanner = elementMaker("img");
         setAttributes(payWithBanner, { "src": `https://i.ibb.co/fkP1VpD/SSLCOMMERZ-Pay-With-logo-All-Size-Aug-21-02.png` });
@@ -9,8 +10,34 @@ window.onload = (event) => {
         payWithBanner.style.display = `block`;
         s0000_footer_row_three_col_two.appendChild(payWithBanner);
 
-        // check out box 
+        let url = location.pathname;
+        document.body.addEventListener('click', () => {
+            setTimeout(() => {
+                requestAnimationFrame(() => {
+                    if (url !== location.href) {
+                        // console.log('url changed', location.pathname);
+                        url = location.pathname
+                        const s0000_footer_row_three_col_two = document.querySelector(".s0000_footer_row_three_col_two");
+                        const payWithBanner = elementMaker("img");
+                        setAttributes(payWithBanner, { "src": `https://i.ibb.co/fkP1VpD/SSLCOMMERZ-Pay-With-logo-All-Size-Aug-21-02.png` });
+                        payWithBanner.style.width = `100%`;
+                        payWithBanner.style.height = `85px`;
+                        payWithBanner.style.display = `block`;
+                        s0000_footer_row_three_col_two.removeChild(s0000_footer_row_three_col_two.childNodes[0]);
+                        s0000_footer_row_three_col_two.appendChild(payWithBanner);
 
+
+                    }
+                });
+            }, 1000);
+
+        }, true);
+
+
+
+
+
+        // check out box 
         window.addEventListener("click", function () {
             const checkoutLocation = window.location.href;
             const checkOutTrue = checkoutLocation.includes("/checkout");
@@ -38,8 +65,6 @@ window.onload = (event) => {
                     if (numb == 1) {
                         soppiya_checkout_btn_wrapper.prepend(checkBoxDiv);
                     }
-
-
 
                     checkBox_id.addEventListener("click", function () {
 
