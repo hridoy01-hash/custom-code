@@ -15,7 +15,7 @@ window.onload = (event) => {
             setTimeout(() => {
                 requestAnimationFrame(() => {
                     if (url !== location.href) {
-                        // console.log('url changed', location.pathname);
+                        console.log('url changed', location.pathname);
                         url = location.pathname
                         const s0000_footer_row_three_col_two = document.querySelector(".s0000_footer_row_three_col_two");
                         const payWithBanner = elementMaker("img");
@@ -23,10 +23,12 @@ window.onload = (event) => {
                         payWithBanner.style.width = `100%`;
                         payWithBanner.style.height = `85px`;
                         payWithBanner.style.display = `block`;
+                        if (location.pathname == '/') {
+                            s0000_footer_row_three_col_two.removeChild(s0000_footer_row_three_col_two.childNodes[0]);
+                            s0000_footer_row_three_col_two.appendChild(payWithBanner);
+                        }
                         s0000_footer_row_three_col_two.removeChild(s0000_footer_row_three_col_two.childNodes[0]);
                         s0000_footer_row_three_col_two.appendChild(payWithBanner);
-
-
                     }
                 });
             }, 1000);
