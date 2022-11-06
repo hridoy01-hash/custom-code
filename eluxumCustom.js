@@ -15,7 +15,7 @@ window.onload = (event) => {
             setTimeout(() => {
                 requestAnimationFrame(() => {
                     if (url !== location.href) {
-                        console.log('url changed', location.pathname);
+                        // console.log('url changed', location.pathname);
                         url = location.pathname
                         const s0000_footer_row_three_col_two = document.querySelector(".s0000_footer_row_three_col_two");
                         const payWithBanner = elementMaker("img");
@@ -31,7 +31,7 @@ window.onload = (event) => {
                         s0000_footer_row_three_col_two.appendChild(payWithBanner);
                     }
                 });
-            }, 1000);
+            }, 1300);
 
         }, true);
 
