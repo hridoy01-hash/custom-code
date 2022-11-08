@@ -58,7 +58,7 @@ window.onload = (event) => {
 
                     const text_wrapper = elementMaker("div", ["text_wrapper"]);
                     text_wrapper.innerHTML = `
-                    <p class="acceptxText">you are accept our <span><a href="https://eluxumbd.com/page/terms">Term condition</a></span> and <span><a href="https://eluxumbd.com/page/1666849095642">Refund Policy</a></span> </p>
+                    <p class="acceptxText">you are accept our <span><a target="_blank" href="https://eluxumbd.com/page/terms">Term condition</a></span>,<span><a target="_blank"" href="https://eluxumbd.com/page/1666849095642">Refund Policy</a></span> and <span><a target="_blank" href="https://eluxumbd.com/page/policy">Privacy policy</a></span> </p>
                     `;
                     Custom_checkbox_main_wrapper.appendChild(text_wrapper);
                     checkBoxDiv.appendChild(Custom_checkbox_main_wrapper);
