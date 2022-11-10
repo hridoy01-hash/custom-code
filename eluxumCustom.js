@@ -42,7 +42,7 @@ window.onload = (event) => {
         // check out box 
         window.addEventListener("click", function () {
             const checkoutLocation = window.location.href;
-            const checkOutTrue = checkoutLocation.includes("/checkout");
+            let checkOutTrue = checkoutLocation.includes("/checkout");
 
             if (checkOutTrue) {
                 setTimeout(function (e) {
@@ -53,7 +53,7 @@ window.onload = (event) => {
                     Custom_checkbox_main_wrapper.appendChild(checkbox_wrapper);
                     let checkBox_id = elementMaker("input", ["checkBox_id"], "checkBoxClick_id");
                     checkBox_id.setAttribute("type", "checkbox");
-                    checkBox_id.setAttribute("checked", true);
+                    // checkBox_id.setAttribute("checked", true);
                     checkbox_wrapper.appendChild(checkBox_id);
 
                     const text_wrapper = elementMaker("div", ["text_wrapper"]);
@@ -69,15 +69,35 @@ window.onload = (event) => {
                         soppiya_checkout_btn_wrapper.prepend(checkBoxDiv);
                     }
 
-                    checkBox_id.addEventListener("click", function () {
 
+                    let answer = document.getElementById("checkBoxClick_id").hasAttribute("checked");
+                    // console.log("answer", answer);
+                    if (answer == false) {
+                        const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
+                        soppiya_checkout_btn.setAttribute("disabled", true);
+                        soppiya_checkout_btn.style.cursor = `not-allowed`;
+                        soppiya_checkout_btn.style.color = `rgba(255,255,255,50%)`;
+                    } else {
+                        const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
+                        soppiya_checkout_btn.setAttribute("disabled", false);
+                        soppiya_checkout_btn.style.cursor = `pointer`;
+                        soppiya_checkout_btn.style.color = `rgba(255,255,255,100%)`;
+                    }
+
+
+                    checkBox_id.addEventListener("click", function () {
                         if (document.getElementById("checkBoxClick_id").checked) {
+                            document.getElementById("checkBoxClick_id").setAttribute("checked",true);
+                            // console.log("answer", answer);
+
                             const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
                             soppiya_checkout_btn.setAttribute("disabled", false);
                             soppiya_checkout_btn.style.cursor = `pointer`;
                             soppiya_checkout_btn.style.color = `rgba(255,255,255,100%)`;
+
                         }
                         else {
+                            document.getElementById("checkBoxClick_id").removeAttribute("checked",false);
                             const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
                             soppiya_checkout_btn.setAttribute("disabled", true);
                             soppiya_checkout_btn.style.cursor = `not-allowed`;
