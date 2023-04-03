@@ -7,23 +7,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Code</title>
     <style>
-        .test_box_shadows{
-            height: 300px;
-            width: 400px;
+        .container {
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0px 20px;
+        }
+
+        .our_story_main_wrapper {
+            padding-top: 30px;
+            padding-bottom: 40px;
+            font-size: 15px;
+        }
+
+        .about_us_title_text {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .our_story_description_text {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .about_us_title_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0px;
+        }
+
+        .title_heading_text {
+            font-size: 23px;
+            color: black;
+            font-weight: 600;
+        }
+
+        .about_us_main_wrapper {
+            margin: 50px 0px !important;
+        }
+
+        .description_container {
+            margin-top: 30px !important;
+        }
+
+        @media screen and (min-width:960px) {
+            .about_us_title_text {
+                font-size: 16px;
+            }
+
+            .our_story_description_text {
+                font-size: 14px;
+                font-weight: 600;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <input type="datetime-local">
-
-    <div class="test_box_shadows">
-
+    <div class="universal">
+        <div class="about_us_main_wrapper">
+            <div class="container">
+                <div class="about_us_title_container">
+                    <span class="title_heading_text">About Us</span>
+                </div>
+                <div class="description_container">
+                    <p class="about_us_title_text" style="text-align: justify;">Eluxum
+                        is an emerging brand of genuine leather fashion accessories from Bangladesh that aspires to
+                        become your everyday companion. We strive to deliver the finest leather accessories for your
+                        banknotes, cards, documents, and other peripherals. We are delighted to establish ourselves as a
+                        prominent brand with reasonable pricing points, concentrating on your convenience via our online
+                        and offline presence. and has the vision to become your daily partner.&nbsp;<br>
+                        <br>
+                    </p>
+                </div>
+                <div class="our_story_description_wrapper"> <span class="our_story_description_text">Thanks For
+                        Being With us!!</span>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-    <script src="./practice.js"></script>
+
 </body>
 
 </html>

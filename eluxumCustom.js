@@ -85,9 +85,9 @@ window.onload = (event) => {
                     }
 
 
-                    checkBox_id.addEventListener("click", function () {
+                    checkBox_id.addEventListener("click", function (event) {
                         if (document.getElementById("checkBoxClick_id").checked) {
-                            document.getElementById("checkBoxClick_id").setAttribute("checked",true);
+                            document.getElementById("checkBoxClick_id").setAttribute("checked", true);
                             // console.log("answer", answer);
 
                             const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
@@ -97,7 +97,7 @@ window.onload = (event) => {
 
                         }
                         else {
-                            document.getElementById("checkBoxClick_id").removeAttribute("checked",false);
+                            document.getElementById("checkBoxClick_id").removeAttribute("checked", false);
                             const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
                             soppiya_checkout_btn.setAttribute("disabled", true);
                             soppiya_checkout_btn.style.cursor = `not-allowed`;
@@ -106,9 +106,18 @@ window.onload = (event) => {
 
                     });
 
+                    const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
+                    soppiya_checkout_btn.addEventListener("click", function () {
+                        console.log("check btn cliked");
+                    });
+
 
                 }, 1000)
             }
+        });
+        const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
+        soppiya_checkout_btn.addEventListener("click", function () {
+            console.log("check btn cliked");
         });
 
 

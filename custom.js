@@ -1,41 +1,133 @@
 
 window.onload = (event) => {
     setTimeout(function () {
-        const s0000_company_brands_wrapper_id = document.getElementById("s0000_company_brands_wrapper_id");
-        const s0000_company_logo = elementMaker("div", ["s0000_company_logo"]);
-        s0000_company_brands_wrapper_id.appendChild(s0000_company_logo);
-        const s0000_thumb_img = elementMaker("div", ["s0000_thumb_img"]);
-        s0000_company_logo.appendChild(s0000_thumb_img);
-        const s0000_company_logo_img = elementMaker("img", ["s0000_company_logo"]);
-        s0000_company_logo_img.style.width = `100%`;
-        s0000_company_logo_img.style.borderRadius = `10px`;
-        setAttributes(s0000_company_logo_img, { "src": `https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/a39b93122419745.60d9b859cc3ff.jpg` });
-        s0000_thumb_img.appendChild(s0000_company_logo_img);
 
-        // account setting
-        /* const BUSINESS_ID = "6304aa113cb8eba9248eac8d";
-        const Referer = `https://dipbip.com/`;
-        const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VySWQiOiI2MzA1OGE0OTZhYTczOWMzYzE3ZjQ3M2QiLCJidXNpbmVzc0lkIjoiNjMwNGFhMTEzY2I4ZWJhOTI0OGVhYzhkIiwidG9rZW5LZXkiOiIzOCIsImlhdCI6MTY2MzY3MDgwMn0.uEQFbTKo6fe-47rc1fMbwPA2wmsdpW2gld1EuKyuuhw`;
+        const s0000_footer_row_three_col_two = document.querySelector(".s0000_footer_row_three_col_two");
+        const payWithBanner = elementMaker("img");
+        setAttributes(payWithBanner, { "src": `https://i.ibb.co/fkP1VpD/SSLCOMMERZ-Pay-With-logo-All-Size-Aug-21-02.png` });
+        payWithBanner.style.width = `100%`;
+        payWithBanner.style.height = `85px`;
+        payWithBanner.style.display = `block`;
+        s0000_footer_row_three_col_two.appendChild(payWithBanner);
 
-        const LoadDataFunction = async (url) => { try { let response = await fetch(url, { method: "get", headers: { "businessid": `${BUSINESS_ID}`, "referer": `${Referer}`, "token": `${token}` } }); response = await response.json(); if (response.Error) { return console.log(response.Error) }; return response; } catch (e) { return }; };
+        let url = location.pathname;
+        document.body.addEventListener('click', () => {
+            setTimeout(() => {
+                requestAnimationFrame(() => {
+                    if (url !== location.href) {
+                        // console.log('url changed', location.pathname);
+                        url = location.pathname
+                        const s0000_footer_row_three_col_two = document.querySelector(".s0000_footer_row_three_col_two");
+                        const payWithBanner = elementMaker("img");
+                        setAttributes(payWithBanner, { "src": `https://i.ibb.co/fkP1VpD/SSLCOMMERZ-Pay-With-logo-All-Size-Aug-21-02.png` });
+                        payWithBanner.style.width = `100%`;
+                        payWithBanner.style.height = `85px`;
+                        payWithBanner.style.display = `block`;
+                        if (location.pathname == '/') {
+                            s0000_footer_row_three_col_two.removeChild(s0000_footer_row_three_col_two.childNodes[0]);
+                            s0000_footer_row_three_col_two.appendChild(payWithBanner);
+                        }
+                        s0000_footer_row_three_col_two.removeChild(s0000_footer_row_three_col_two.childNodes[0]);
+                        s0000_footer_row_three_col_two.appendChild(payWithBanner);
+                    }
+                });
+            }, 1300);
+
+        }, true);
 
 
-        (async function userNameDisplay() {
-            const userInfo = await LoadDataFunction(`https://api.soppiya.com/v2.1/site/data/account/info/get`);
-            const UserName = userInfo.name;
-            const s0000_account_large_device_icon_parent_id = document.getElementById("s0000_account_large_device_icon_parent_id");
-            const s0000_account_large_device_icon_id = document.getElementById("s0000_account_large_device_icon_id");
-            s0000_account_large_device_icon_id.innerText = `${UserName}`;
-            s0000_account_large_device_icon_parent_id.appendChild(s0000_account_large_device_icon_id);
-        })(); */
 
-        const billCorrection = document.querySelector(".invoiceHeader_address_title__QNFJg");
-        billCorrection.innerText = `Bill`;
 
-        
-       const pos3Invoice_powerByText__VAi00 = document.querySelector(".pos3Invoice_powerByText__VAi00");
-       pos3Invoice_powerByText__VAi00.textContent = `Powered by KropZAgro`;
-       
+
+        // check out box 
+        let myEventfunction = () => {
+            setTimeout(() => {
+                const checkoutLocation = window.location.href;
+                let checkOutTrue = checkoutLocation.includes("/checkout");
+
+                if (checkOutTrue) {
+                    setTimeout(function () {
+                        const soppiya_checkout_btn_wrapper = document.getElementById("soppiya_checkout_btn_wrapper");
+                        const checkBoxDiv = elementMaker("div", ["checkbox_container"]);
+                        const Custom_checkbox_main_wrapper = elementMaker("div", ["Custom_checkbox_main_wrapper"]);
+                        const checkbox_wrapper = elementMaker("div", ["checkbox_wrapper"]);
+                        Custom_checkbox_main_wrapper.appendChild(checkbox_wrapper);
+                        let checkBox_id = elementMaker("input", ["checkBox_id"], "checkBoxClick_id");
+                        checkBox_id.setAttribute("type", "checkbox");
+                        // checkBox_id.setAttribute("checked", true);
+                        checkbox_wrapper.appendChild(checkBox_id);
+
+                        const text_wrapper = elementMaker("div", ["text_wrapper"]);
+                        text_wrapper.innerHTML = `
+                        <p class="acceptxText">you are accept our <span><a target="_blank" href="https://eluxumbd.com/page/terms">Term condition</a></span>,<span><a target="_blank"" href="https://eluxumbd.com/page/1666849095642">Refund Policy</a></span> and <span><a target="_blank" href="https://eluxumbd.com/page/policy">Privacy policy</a></span> </p>
+                        `;
+                        Custom_checkbox_main_wrapper.appendChild(text_wrapper);
+                        checkBoxDiv.appendChild(Custom_checkbox_main_wrapper);
+
+
+                        let numb = document.getElementById("soppiya_checkout_btn_wrapper").childNodes.length;
+                        if (numb == 1) {
+                            soppiya_checkout_btn_wrapper.prepend(checkBoxDiv);
+                        }
+
+
+                        let answer = document.getElementById("checkBoxClick_id").hasAttribute("checked");
+                        // console.log("answer", answer);
+                        if (answer == false) {
+                            const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
+                            soppiya_checkout_btn.setAttribute("disabled", true);
+                            soppiya_checkout_btn.style.cursor = `not-allowed`;
+                            soppiya_checkout_btn.style.color = `rgba(255,255,255,50%)`;
+                        } else {
+                            const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
+                            soppiya_checkout_btn.setAttribute("disabled", false);
+                            soppiya_checkout_btn.style.cursor = `pointer`;
+                            soppiya_checkout_btn.style.color = `rgba(255,255,255,100%)`;
+                        }
+
+
+                        checkBox_id.addEventListener("click", function (event) {
+                            if (document.getElementById("checkBoxClick_id").checked) {
+                                document.getElementById("checkBoxClick_id").setAttribute("checked", true);
+                                // console.log("answer", answer);
+
+                                const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
+                                soppiya_checkout_btn.setAttribute("disabled", false);
+                                soppiya_checkout_btn.style.cursor = `pointer`;
+                                soppiya_checkout_btn.style.color = `rgba(255,255,255,100%)`;
+
+                            }
+                            else {
+                                document.getElementById("checkBoxClick_id").removeAttribute("checked", false);
+                                const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
+                                soppiya_checkout_btn.setAttribute("disabled", true);
+                                soppiya_checkout_btn.style.cursor = `not-allowed`;
+                                soppiya_checkout_btn.style.color = `rgba(255,255,255,50%)`;
+                            }
+
+                        });
+
+                        const soppiya_checkout_btn = document.getElementById("soppiya_checkout_btn");
+                        soppiya_checkout_btn.addEventListener("click", function () {
+                            console.log("check btn cliked");
+                        });
+
+
+                    }, 100);
+                }
+
+            }, 100);
+        };
+
+        // link change watcher
+        let previousHistory = '';
+        setInterval(() => {
+            if (window.location.href !== previousHistory) {
+                previousHistory = window.location.href;
+                myEventfunction();
+            }
+        }, 100);
+
 
 
         function elementMaker(name, className, id) {
@@ -54,17 +146,5 @@ window.onload = (event) => {
                 elementName.setAttribute(key, allAttributes[key]);
             };
         };
-    }, 1350);
+    }, 1450);
 };
-
-/* 
-        const s0000_special_category_nav_list_id = document.getElementById("s0000_special_category_nav_list_id");
-        const s0000_category_nav_item = elementMaker("li", ["s0000_category_nav_item"]);
-        s0000_special_category_nav_list_id.appendChild(s0000_category_nav_item);
-        const s0000_category_nav_link_wrapper = elementMaker("div", ["s0000_category_nav_link_wrapper"]);
-        s0000_category_nav_item.appendChild(s0000_category_nav_link_wrapper);
-        const s0000_category_nav_link = elementMaker("span", ["s0000_category_nav_link"]);
-        s0000_category_nav_link.textContent = `External Item`;
-        s0000_category_nav_link_wrapper.appendChild(s0000_category_nav_link);
-*/
-
